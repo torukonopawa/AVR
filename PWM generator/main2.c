@@ -25,7 +25,7 @@ int main(void) {
 	{
 		if(!(PIND & (1<<PD2)))
 		{
-			while(OCR1A < _MAX)
+			if(OCR1A < _MAX)
 			{
 				OCR1A = OCR1A + _p25ms;
 				_delay_ms(50);
@@ -33,7 +33,7 @@ int main(void) {
 		}
 		else if(!(PIND & (1<<PD3)))
 		{
-			while(OCR1A > _MIN)
+			if(OCR1A > _MIN)
 			{
 				OCR1A = OCR1A - _p25ms;
 				_delay_ms(50);
